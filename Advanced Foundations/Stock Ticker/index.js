@@ -25,24 +25,20 @@ Challenge:
 */
 
 const comparePrices = (currentPrice, previousPrice) => {
-  let indicatorColor = ""
+  let iconColor = "grey"
   if (currentPrice > previousPrice) {
-    indicatorColor = "green"
+    iconColor = "green"
   } else if (currentPrice < previousPrice) {
-    indicatorColor = "red"
-  } else {
-    indicatorColor = "grey"
+    iconColor = "red"
   }
-  return indicatorColor
+  return iconColor
 }
 
-const refreshData = () => {}
-
+let previousPrice = 0
 function renderStockTicker(stockData) {
   const { name, sym: symbol, price, time } = stockData
 
   const currentPrice = Number(price)
-  let previousPrice = 0
 
   const stockDisplayName = document.getElementById("name")
   const stockDisplaySymbol = document.getElementById("symbol")
@@ -53,7 +49,20 @@ function renderStockTicker(stockData) {
   stockDisplayName.textContent = name
   stockDisplaySymbol.textContent = symbol
   stockDisplayPrice.textContent = price
+  stockDisplayPriceIcon.innerHTML = `<img src="./svg/${comparePrices(
+    currentPrice,
+    previousPrice
+  )}.svg" />`
+
   stockDisplayTime.textContent = time
+
+  previousPrice = currentPrice
 }
 
-renderStockTicker(getStockData())
+const refreshStockData = () => {
+  const refreshIntervalId = setInterval(() => {
+    renderStockTicker(getStockData())
+  }, 1500)
+}
+
+refreshStockData()
