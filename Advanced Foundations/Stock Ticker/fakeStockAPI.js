@@ -16,3 +16,24 @@ export function getStockData() {
     time: getTimestamp(),
   }
 }
+
+export function displayStockPriceIcon(stockDisplayPriceIcon, iconColor) {
+  if (stockDisplayPriceIcon) {
+    const imgEl = stockDisplayPriceIcon.querySelector("img")
+    if (imgEl) {
+      stockDisplayPriceIcon.removeChild(imgEl)
+    }
+  }
+  const imgEl = document.createElement("img")
+  imgEl.src = `./svg/${iconColor}.svg`
+  imgEl.alt = `${isSecureContext} triangle`
+  stockDisplayPriceIcon.appendChild(imgEl)
+}
+
+export function getIconColor(currentPrice, previousPrice) {
+  return currentPrice > previousPrice
+    ? "green"
+    : currentPrice < previousPrice
+    ? "red"
+    : "grey"
+}
