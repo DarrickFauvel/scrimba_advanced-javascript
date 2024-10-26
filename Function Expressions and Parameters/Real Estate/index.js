@@ -13,14 +13,15 @@ import { placeholderPropertyObj } from "./properties/placeholderPropertyObj.js"
     0
   )
 
+  return `<section class="card">
+    <img src="/images/${image}">
     <div class="card-right">
-        <h2>PROPERTY LOCATION</h2>
-        <h3>PRICE GBP</h3>
-        <p>COMMENT</p>
-        <h3>TOTAL SIZE IN SQUARE METRES m&sup2;</h3>
+        <h2>${location}</h2>
+        <h3>${price}</h3>
+        <p>${comment}</p>
+        <h3>${totalRoomSizeInSquareMeters} m&sup2;</h3>
     </div>
-</section> 
-*/
+</section>`
 }
 
 /***** Modify 👇 by adding an argument to the function call ONLY. *****/
