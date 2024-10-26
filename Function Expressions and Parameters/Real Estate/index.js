@@ -8,6 +8,11 @@ import { placeholderPropertyObj } from "./properties/placeholderPropertyObj.js"
     image,
   } = property
 
+  const totalRoomSizeInSquareMeters = roomsInSquareMeters.reduce(
+    (total, currentPrice) => total + currentPrice,
+    0
+  )
+
     <div class="card-right">
         <h2>PROPERTY LOCATION</h2>
         <h3>PRICE GBP</h3>
