@@ -26,5 +26,10 @@ function renderCard(property) {
 </section>`
 }
 
+function renderCards(properties) {
+  return properties.map((property) => renderCard(property)).join("")
+}
+
+
 /***** Modify 👇 by adding an argument to the function call ONLY. *****/
 document.getElementById('container').innerHTML = getPropertyHtml()
