@@ -30,6 +30,9 @@ function renderCards(properties) {
   return properties.map((property) => renderCard(property)).join("")
 }
 
+function getPropertyHtml(properties = [placeholderPropertyObj]) {
+  return renderCards(properties)
+}
 
 /***** Modify 👇 by adding an argument to the function call ONLY. *****/
 document.getElementById('container').innerHTML = getPropertyHtml()
