@@ -1,24 +1,5 @@
-function getPropertyHtml() {
-/*
-SUPER CHALLENGE 💪
-
-Render out a card for each of the properties in the propertyForSaleArr array (in the 'properties' folder). Each card should have an image, a property location, a price, a comment and the TOTAL property size in square metres (each object has an array with the size in square metres of the individual rooms).
-
-If no array of properties is passed to getPropertyHtml, the placeholder property stored in placeholderPropertyObj (in the 'properties' folder) should be rendered instead.
-
-This is the JS I want you to use to complete this challenge 👇
-- import/export
-- .map()
-- .join()
-- Object destructuring
-- .reduce()
-- Default parameters
-
-The HTML and CSS have been done for you. 
-This is the HTML template 👇. Replace everything in UPPERCASE with property data.
-
-<section class="card">
-    <img src="/images/IMAGE">
+import { propertyForSaleArr } from "./properties/propertyForSaleArr.js"
+import { placeholderPropertyObj } from "./properties/placeholderPropertyObj.js"
     <div class="card-right">
         <h2>PROPERTY LOCATION</h2>
         <h3>PRICE GBP</h3>
