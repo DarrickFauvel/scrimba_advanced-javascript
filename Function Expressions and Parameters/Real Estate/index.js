@@ -1,5 +1,7 @@
 import { propertyForSaleArr } from "./properties/propertyForSaleArr.js"
 import { placeholderPropertyObj } from "./properties/placeholderPropertyObj.js"
+
+function renderCard(property) {
   const {
     propertyLocation: location,
     priceGBP: price,
